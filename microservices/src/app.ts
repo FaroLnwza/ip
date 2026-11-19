@@ -6,4 +6,10 @@ export const app = new Elysia().get(
   {
     response: t.Object({ status: t.Literal("ok") }),
   },
+).get(
+  "/about",
+  () => ({ status: "Tosakul" as const }),
+  {
+    response: t.Object({ status: t.Literal("Tosakul") }),
+  },
 );
